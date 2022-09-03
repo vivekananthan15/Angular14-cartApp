@@ -1,0 +1,16 @@
+/* ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+li{
+    list-style-type: none !important;
+    list-style: none;
+    text-overflow: ellipsis;
+    width: 40%;
+    text-align: center;
+    cursor: pointer;
+    justify-content: center;
+}
+img{
+    text-align: center;
+} */

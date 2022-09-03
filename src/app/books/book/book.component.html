@@ -1,0 +1,12 @@
+<li class="flex border m-4 p-4 m-auto w-full text-center rounded-xl h-60">
+    <img [src]="book.image" width="100" [alt]="book.name" class="m-auto rounded-sm" />
+    <div class="m-auto">
+        <p class="title text-lg">{{ book.name | titlecase }} by {{ book.author | titlecase }}</p>
+        <p class="currency my-4">Price: {{ book.amount | currency : 'INR'}}</p>
+        <button *ngIf="!isInCart" (click)="addToCart()" class="border p-3 bg-amber-600 text-white rounded" [disabled]="isDisable">
+            Add to Cart
+        </button><br/>
+        <span *ngIf="isDisable" class="text-red-600"> Please Login</span>
+        <button *ngIf="isInCart" (click)="removeFromCart()" class="border p-3 bg-amber-600 text-white rounded">Remove from Cart</button>
+    </div>
+</li>

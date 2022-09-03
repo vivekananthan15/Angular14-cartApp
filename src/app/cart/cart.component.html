@@ -1,0 +1,29 @@
+<div class="justify-center align-center w-full">
+<h1 class="text-3xl font-bold underline">Your Cart Details</h1>
+<table class="table-auto items-center py-4 justify-center border">
+    <thead>
+      <tr>
+        <th class="items-center p-4 m-4 justify-center">Book Image</th>
+        <th class="items-center p-4 m-4 justify-center">Book Name</th>
+        <th class="items-center p-4 m-4 justify-center">Book Price</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="getCart().length > 0">
+      <tr *ngFor="let book of getCart()">
+                <td class="items-center p-4 m-4 justify-center"><img src="{{book.image}}" width="50" alt="{{book.name}}"/></td>
+                <td class="items-center p-4 m-4 justify-center">{{book.name}}</td>
+                <td class="items-center p-4 m-4 justify-center">{{book.amount | currency : 'INR'}}</td>
+        </tr>     
+      </tbody>
+      <tbody>
+        <tr>
+          <td class="p-4 m-4">Total Cart:{{getCart().length}}</td>
+          <td></td>
+          <td class="p-4 m-4">Total amount:{{totalCart() | currency : 'INR'}}</td>
+        </tr>
+      </tbody>
+      </table>           
+<div *ngIf="getCart().length == 0">
+    No Books in Your Cart
+</div>
+</div>
